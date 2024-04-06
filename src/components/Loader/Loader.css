@@ -1,0 +1,22 @@
+.toss {
+  animation: toss-animation 2s infinite;
+}
+
+@keyframes toss-animation {
+  0%,
+  10% {
+    transform: perspective(300px) rotate(0) rotateY(0) rotateX(0);
+  }
+  30%,
+  36% {
+    transform: perspective(300px) rotate(0.5turn) rotateY(0) rotateX(0);
+  }
+  63%,
+  69% {
+    transform: perspective(300px) rotate(0.5turn) rotateY(180deg) rotateX(0);
+  }
+  90%,
+  100% {
+    transform: perspective(300px) rotate(0.5turn) rotateY(180deg) rotateX(180deg);
+  }
+}
