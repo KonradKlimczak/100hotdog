@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 
 import { createInWithEmail } from '@/services/user';
@@ -8,13 +9,14 @@ import { LabeledInput } from '../Input/LabeledInput';
 import { LoginWrapper } from './LoginWrapper';
 
 export const CreateUserForm = () => {
+  const router = useRouter();
   const [usename, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = useCallback(() => {
-    createInWithEmail(usename, email, password);
-  }, [usename, email, password]);
+    createInWithEmail(usename, email, password).then(() => router.push('/'));
+  }, [usename, email, password, router]);
 
   return (
     <LoginWrapper>

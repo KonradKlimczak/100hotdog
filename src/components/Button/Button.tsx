@@ -18,10 +18,13 @@ const RETRO_STYLE = 'border-4 border-dotted border-black';
 const SCALE_ON_HOVER = 'transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105';
 
 export const Button = (props: ButtonProps) => {
-  const { variant, children, ...rest } = props;
+  const { variant, children, className, ...rest } = props;
 
   return (
-    <button className={`${COMMON_STYLES} ${RETRO_STYLE} ${SCALE_ON_HOVER} ${variantStyles[variant]}`} {...rest}>
+    <button
+      className={`${COMMON_STYLES} ${RETRO_STYLE} ${SCALE_ON_HOVER} ${variantStyles[variant]} ${className}`}
+      {...rest}
+    >
       {children}
     </button>
   );

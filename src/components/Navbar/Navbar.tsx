@@ -2,6 +2,7 @@
 import LunchDiningTwoToneIcon from '@mui/icons-material/LunchDiningTwoTone';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import Drawer from '@mui/material/Drawer';
+import Link from 'next/link';
 import { useState } from 'react';
 
 import { useUser } from '@/services/user';
@@ -21,7 +22,9 @@ export const Navbar = () => {
     <>
       <nav className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-4 opacity-95">
         <div className="flex justify-between items-center">
-          <p>{user.displayName}</p>
+          <Link href="/">
+            <p>{user.displayName}</p>
+          </Link>
           <Button variant="ghost" onClick={() => setIsOpen(true)}>
             <LunchDiningTwoToneIcon />
           </Button>
@@ -36,6 +39,21 @@ export const Navbar = () => {
             </Button>
           </div>
           <div className="flex flex-col items-stretch gap-4">
+            <Link href="/" className="flex">
+              <Button variant="primary" onClick={() => setIsOpen(false)} className="flex-1">
+                Główna
+              </Button>
+            </Link>
+            <Link href="/add-haiku" className="flex">
+              <Button variant="primary" onClick={() => setIsOpen(false)} className="flex-1">
+                Dodaj hotdogowe haiku
+              </Button>
+            </Link>
+            <Link href="/haikus" className="flex">
+              <Button variant="primary" onClick={() => setIsOpen(false)} className="flex-1">
+                Haikus
+              </Button>
+            </Link>
             <Button variant="ghost">Ten button nic nie robi</Button>
           </div>
         </div>
