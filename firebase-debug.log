@@ -1,0 +1,20 @@
+[debug] [2024-05-22T17:31:42.493Z] ----------------------------------------------------------------------
+[debug] [2024-05-22T17:31:42.494Z] Command:       /home/konrad/.nvm/versions/node/v20.11.1/bin/node /home/konrad/.nvm/versions/node/v20.11.1/bin/firebase deploy
+[debug] [2024-05-22T17:31:42.495Z] CLI Version:   13.4.0
+[debug] [2024-05-22T17:31:42.495Z] Platform:      linux
+[debug] [2024-05-22T17:31:42.495Z] Node Version:  v20.11.1
+[debug] [2024-05-22T17:31:42.495Z] Time:          Wed May 22 2024 19:31:42 GMT+0200 (Central European Summer Time)
+[debug] [2024-05-22T17:31:42.495Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-22T17:31:42.540Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-22T17:31:42.541Z] > authorizing via signed-in user (konradklimczak93@gmail.com)
+[debug] [2024-05-22T17:31:42.541Z] [iam] checking project hotdog-a5cc5 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-05-22T17:31:42.542Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/hotdog-a5cc5:testIamPermissions [none]
+[debug] [2024-05-22T17:31:42.542Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/hotdog-a5cc5:testIamPermissions x-goog-quota-user=projects/hotdog-a5cc5
+[debug] [2024-05-22T17:31:42.542Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/hotdog-a5cc5:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-05-22T17:31:43.318Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/hotdog-a5cc5:testIamPermissions 200
+[debug] [2024-05-22T17:31:43.319Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/hotdog-a5cc5:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-05-22T17:31:43.319Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/hotdog-a5cc5 [none]
+[debug] [2024-05-22T17:31:43.584Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/hotdog-a5cc5 200
+[debug] [2024-05-22T17:31:43.584Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/hotdog-a5cc5 {"projectId":"hotdog-a5cc5","projectNumber":"398373685291","displayName":"100hotdog","name":"projects/hotdog-a5cc5","resources":{"hostingSite":"hotdog-a5cc5","storageBucket":"hotdog-a5cc5.appspot.com","locationId":"europe-central2"},"state":"ACTIVE","etag":"1_258b9435-783c-4c35-ac33-fa032e9b9fb3"}
+[debug] [2024-05-22T17:31:44.618Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/hotdog-a5cc5/sites pageToken=&pageSize=10
