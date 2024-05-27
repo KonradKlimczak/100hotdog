@@ -1,13 +1,21 @@
-import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 
 import { db } from '@/services/firebase';
 
-interface UserProfile {
+export interface UserProfile {
   uid: string;
   name: string;
 }
 
-export const updateUserProfile = async (uid: string, displayName: string | null) => {
+export const getUserProfile = async (uid: string) => {
+  const userRef = doc(db, 'profiles', uid);
+
+  const docSnap = await getDoc(userRef);
+
+  return docSnap.data() as UserProfile;
+};
+
+export const createUserProfile = async (uid: string, displayName: string | null) => {
   const userRef = doc(db, 'profiles', uid);
 
   const docSnap = await getDoc(userRef);
@@ -16,6 +24,13 @@ export const updateUserProfile = async (uid: string, displayName: string | null)
     const userProfile: UserProfile = { uid, name: displayName ?? 'Anonymous' };
     await setDoc(doc(db, 'profiles', uid), userProfile);
   }
+};
+
+export const updateUserProfile = async (uid: string, displayName: string) => {
+  const profileRef = doc(db, 'profiles', uid);
+
+  const userProfile = { uid, name: displayName };
+  await updateDoc(profileRef, userProfile);
 };
 
 export const getUserProfiles = async (uids: string[]) => {

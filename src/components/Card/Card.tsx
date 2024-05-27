@@ -10,7 +10,7 @@ export const Card = (props: CardProps) => {
   return (
     <div
       className={clsx(
-        'max-w-md mx-auto overflow-hidden rounded-lg shadow-lg bg-gradient-to-b from-gray-700 to-gray-800 p-6',
+        'overflow-hidden rounded-lg shadow-lg bg-gradient-to-b from-gray-700 to-gray-800 p-6',
         'flex gap-4 flex-col text-gray-400',
         className,
       )}

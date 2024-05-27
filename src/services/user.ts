@@ -10,21 +10,21 @@ import {
 import { redirect } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-import { updateUserProfile } from '@/backend/profile';
+import { getUserProfile, createUserProfile, UserProfile } from '@/backend/profile';
 import { auth } from '@/services/firebase';
 
 const google = new GoogleAuthProvider();
 
 export const signInWithGoogle = () => {
   signInWithPopup(auth, google).then((credential) => {
-    updateUserProfile(credential.user.uid, credential.user.displayName);
+    createUserProfile(credential.user.uid, credential.user.displayName);
   });
 };
 
 export const createInWithEmail = (displayName: string, email: string, password: string) => {
   return createUserWithEmailAndPassword(auth, email, password).then((credential) => {
     signInWithEmailAndPassword(auth, email, password).then(() => {
-      updateUserProfile(credential.user.uid, displayName);
+      createUserProfile(credential.user.uid, displayName);
     });
   });
 };
@@ -39,14 +39,19 @@ export const logout = () => {
 
 export const useUser = () => {
   const [user, setUser] = useState<User | null>(null);
+  const [profile, setProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setLoading(false);
       if (currentUser) {
         setUser(currentUser);
+        getUserProfile(currentUser.uid).then((currentProfile) => {
+          setProfile(currentProfile);
+          setLoading(false);
+        });
       } else {
+        setLoading(false);
         setUser(null);
       }
     });
@@ -54,5 +59,5 @@ export const useUser = () => {
     return () => unsubscribe();
   }, []);
 
-  return { user, loading };
+  return { profile, user, loading };
 };

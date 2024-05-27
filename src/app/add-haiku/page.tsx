@@ -7,19 +7,22 @@ import { Haiku } from '@/components/Haiku/Haiku';
 import { HaikuForm } from '@/components/Haiku/HaikuForm';
 import { StyledLink } from '@/components/Link';
 import { useUser } from '@/services/user';
+import { useRouter } from 'next/navigation';
 
 export default function AddHaiku() {
   const { user } = useUser();
+  const router = useRouter();
 
   const handleAddHaiku = (poem: HaikuPoem) => {
     addHaiku(user?.uid ?? '', poem);
+    router.push('/haikus');
   };
 
   return (
     <main className="p-4">
       <Card>
         <div className="flex gap-1 flex-col">
-          <Marquee className="text-gray-800 dark:text-white">🌭 Hotdog, jak wiersz -  prosty&nbsp;</Marquee>
+          <Marquee className="text-gray-800 dark:text-white">🌭 Hotdog, jak wiersz - prosty&nbsp;</Marquee>
         </div>
         <HaikuForm onSubmit={handleAddHaiku} />
         <StyledLink href="/">Wróć</StyledLink>

@@ -4,22 +4,12 @@ import FormGroup from '@mui/material/FormGroup';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 
-import { getSavedDates, saveDates } from '@/backend/dates';
+import { POSSIBLE_DATES, getSavedDates, saveDates } from '@/backend/dates';
 import { Button } from '@/components/Button';
 import { Card } from '@/components/Card';
 import { useUser } from '@/services/user';
 
 import { CalendarCheckbox } from './CalendarCheckbox';
-
-const POSSIBLE_DATES = [
-  '20.07.2024',
-  '27.07.2024',
-  '03.08.2024',
-  '10.08.2024',
-  '17.08.2024',
-  '24.08.2024',
-  '31.08.2024',
-];
 
 export default function EventDate() {
   const [checkedDates, setCheckedDates] = useState<Record<string, boolean>>({});

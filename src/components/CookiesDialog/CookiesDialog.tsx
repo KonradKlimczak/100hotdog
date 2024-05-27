@@ -4,17 +4,22 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Button } from '../Button';
 
 export default function CookiesDialog() {
-  const [open, setOpen] = useState(window.localStorage.getItem('cookies') ? false : true);
+  const [open, setOpen] = useState(false);
 
   const handleClose = () => {
     window.localStorage.setItem('cookies', 'seen');
     setOpen(false);
   };
+
+  useEffect(() => {
+    const seen = window?.localStorage.getItem('cookies');
+    setOpen(seen ? false : true);
+  }, []);
 
   return (
     <Dialog open={open} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
