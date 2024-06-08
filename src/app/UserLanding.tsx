@@ -24,9 +24,9 @@ export const UserLanding = (props: UserLandingProps) => {
 
       <HotdogProgress />
 
-      <Link href="event-date" className="flex">
+      <Link href="about" className="flex">
         <Button variant="primary" className="flex-1">
-          Daj znać jakie daty Ci pasują na 101 hotdogów!
+          🌭101 hot dogów! - 17.08.2024🌭
         </Button>
       </Link>
 

@@ -2,11 +2,13 @@
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
-import { getHaikus, HaikuPost } from '@/backend/haiku';
+import { getHaikus, HaikuPost, likeHaiku } from '@/backend/haiku';
 import { Card } from '@/components/Card';
 
 import { amaticSC } from '../ui/fonts';
 import { formatDateToHHMMDDMMYYYY } from '@/helpers/date';
+import { LikeButton } from '@/components/Interactions/Like';
+import { DislikeButton } from '@/components/Interactions/Dislike';
 
 export default function HaikuList() {
   const [haikus, setHaikues] = useState<HaikuPost[]>([]);
@@ -18,7 +20,7 @@ export default function HaikuList() {
 
   return (
     <main className="p-4 flex flex-col gap-5">
-      {haikus.map(({ poem, username, createdAt }, index) => (
+      {haikus.map(({ poem, username, createdAt, id, likes, dislikes }, index) => (
         <div
           key={index}
           className={clsx('flex flex-1', {
@@ -36,6 +38,36 @@ export default function HaikuList() {
               <p>{poem.lineOne}</p>
               <p>{poem.lineTwo}</p>
               <p>{poem.lineThree}</p>
+            </div>
+            <div className="flex justify-between gap-2">
+              <LikeButton
+                likes={likes ?? 0}
+                onClick={() => {
+                  likeHaiku(id, (likes ?? 0) + 1);
+                  setHaikues((prev) =>
+                    prev.map((h) => {
+                      if (h.id === id) {
+                        return { ...h, likes: (h.likes ?? 0) + 1 };
+                      }
+                      return h;
+                    }),
+                  );
+                }}
+              />
+              <DislikeButton
+                dislikes={dislikes ?? 0}
+                onClick={() => {
+                  likeHaiku(id, (dislikes ?? 0) + 1);
+                  setHaikues((prev) =>
+                    prev.map((h) => {
+                      if (h.id === id) {
+                        return { ...h, dislikes: (h.dislikes ?? 0) + 1 };
+                      }
+                      return h;
+                    }),
+                  );
+                }}
+              />
             </div>
           </Card>
         </div>

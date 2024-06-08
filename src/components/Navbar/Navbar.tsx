@@ -9,6 +9,7 @@ import { createUserProfile } from '@/backend/profile';
 import { useUser } from '@/services/user';
 
 import { Button } from '../Button';
+import { throwHogfetti } from '@/helpers/hotfetti';
 
 export const Navbar = () => {
   const { user, profile } = useUser();
@@ -51,6 +52,11 @@ export const Navbar = () => {
                 Główna
               </Button>
             </Link>
+            <Link href="/about" className="flex">
+              <Button variant="primary" onClick={() => setIsOpen(false)} className="flex-1">
+                101 hotdogów
+              </Button>
+            </Link>
             <Link href="/profile" className="flex">
               <Button variant="primary" onClick={() => setIsOpen(false)} className="flex-1">
                 Edytuj profil
@@ -66,7 +72,9 @@ export const Navbar = () => {
                 Haikus
               </Button>
             </Link>
-            <Button variant="ghost">Ten button nic nie robi</Button>
+            <Button variant="ghost" onClick={throwHogfetti}>
+              Ten button nic nie robi
+            </Button>
           </div>
         </div>
       </Drawer>

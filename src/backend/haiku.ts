@@ -1,4 +1,4 @@
-import { addDoc, collection, doc, getDoc, getDocs, setDoc, Timestamp } from 'firebase/firestore';
+import { addDoc, collection, doc, getDoc, getDocs, setDoc, Timestamp, updateDoc } from 'firebase/firestore';
 
 import { db } from '@/services/firebase';
 import { getUserProfiles } from './profile';
@@ -11,9 +11,12 @@ export type HaikuPoem = {
 };
 
 export type HaikuDoc = {
+  id: string;
   authorUid: string;
   poem: HaikuPoem;
   createdAt?: Timestamp;
+  likes?: number;
+  dislikes?: number;
 };
 
 export type HaikuPost = Omit<HaikuDoc, 'createdAt'> & {
@@ -22,7 +25,7 @@ export type HaikuPost = Omit<HaikuDoc, 'createdAt'> & {
 };
 
 export const addHaiku = async (authorUid: string, poem: HaikuPoem) => {
-  const haiku: HaikuDoc = { authorUid, poem, createdAt: Timestamp.now() };
+  const haiku: Omit<HaikuDoc, 'id'> = { authorUid, poem, createdAt: Timestamp.now() };
 
   const coll = collection(db, 'haikus');
   const result = await addDoc(coll, haiku);
@@ -38,7 +41,7 @@ export const getHaikus = async (): Promise<HaikuPost[]> => {
   const haikus: HaikuDoc[] = [];
 
   haikusSnapshot.forEach((doc) => {
-    haikus.push(doc.data() as HaikuDoc);
+    haikus.push({ ...doc.data(), id: doc.id } as HaikuDoc);
   });
 
   const profileUids = haikus.map(({ authorUid }) => authorUid);
@@ -55,4 +58,18 @@ export const getHaikus = async (): Promise<HaikuPost[]> => {
       };
     }),
   );
+};
+
+export const likeHaiku = async (haikuId: string, likes: number): Promise<void> => {
+  const docRef = doc(db, 'haikus', haikuId);
+  await updateDoc(docRef, {
+    likes,
+  });
+};
+
+export const dislikeHaiku = async (haikuId: string, dislikes: number): Promise<void> => {
+  const docRef = doc(db, 'haikus', haikuId);
+  await updateDoc(docRef, {
+    dislikes,
+  });
 };

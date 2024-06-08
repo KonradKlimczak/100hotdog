@@ -1,12 +1,12 @@
 'use client';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
-import { Card, CardContent, Collapse, IconButton, Link, Typography } from '@mui/material';
+import { Card, CardContent, Collapse, Link, Typography } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import React, { useState } from 'react';
 
 const theme = createTheme({
   typography: {
-    fontFamily: '"Press Start 2P", cursive',
+    fontFamily: 'Press Start 2P, Arial, sans-serif',
   },
 });
 
@@ -49,7 +49,8 @@ export default function About() {
               101 HOT DOGÓW
             </Link>
             ! Razem zbierzemy trochę pieniędzy na szczytny cel i zjemy 101 hot dogów! Impreza odbędzie się 17 sierpnia
-            2024 roku na działce letniskowej w Popowie, pod adresem Popów 1K, 99-235 Popów.
+            (jeśli będzie bardzo zła pogoda to 24 sierpnia - tydzień później) 2024 roku na działce letniskowej w
+            Popowie, pod adresem Popów 1K, 99-235 Popów.
           </Typography>
 
           <CollapsibleSection title="Cel Imprezy">

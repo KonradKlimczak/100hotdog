@@ -1,7 +1,7 @@
 export function sortByCreatedAt<T extends { createdAt?: Date }>(items: T[]): T[] {
   return items.toSorted((a, b) => {
     if (a.createdAt && b.createdAt) {
-      return a.createdAt.getTime() - b.createdAt.getTime();
+      return b.createdAt.getTime() - a.createdAt.getTime();
     } else if (a.createdAt) {
       return -1;
     } else if (b.createdAt) {

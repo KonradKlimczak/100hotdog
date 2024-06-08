@@ -5,7 +5,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;
 };
 
-const COMMON_STYLES = 'py-2 px-4 font-bold text-lg cursor-pointer';
+const COMMON_STYLES = 'p-2 font-bold text-lg cursor-pointer';
 
 const variantStyles = {
   primary: 'bg-gradient-to-r from-pink-400 to-yellow-500 text-black hover:from-pink-500 hover:to-yellow-600',
