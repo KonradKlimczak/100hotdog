@@ -1,7 +1,7 @@
 import { throwHogfetti } from '@/helpers/hotfetti';
+
 import { Button } from '../Button';
 import { IconsDuplicator } from './IconsDuplicator';
-import BloodSausageImage from './blood-sausage.png';
 
 type LikeButtonProps = {
   dislikes: number;

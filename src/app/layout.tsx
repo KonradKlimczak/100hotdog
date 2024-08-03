@@ -1,7 +1,6 @@
 import './globals.css';
 
 import type { Metadata } from 'next';
-import Head from 'next/head';
 
 import { pressStart2P } from '@/app/ui/fonts';
 import { Navbar } from '@/components/Navbar/Navbar';

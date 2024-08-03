@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import Image, { ImageProps } from 'next/image';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { createIndexArray } from '@/helpers/array';
@@ -7,7 +6,7 @@ import { createIndexArray } from '@/helpers/array';
 type IconsDuplicatorProps = {
   times: number;
   size: number;
-  src: ImageProps['src'];
+  src: string;
 };
 
 export const IconsDuplicator = (props: IconsDuplicatorProps) => {
@@ -60,7 +59,7 @@ export const IconsDuplicator = (props: IconsDuplicatorProps) => {
               left: Math.min((index % itemsInOneRow) * widthPerItem, (index % itemsInOneRow) * (size + 4)),
             }}
           >
-            <Image src={src} alt="Mniam" width={scale * size} height={scale * size} />
+            <img src={src} alt="Mniam" width={scale * size} height={scale * size} />
           </div>
         );
       })}

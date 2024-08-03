@@ -7,6 +7,7 @@ import { FileInput } from '@/components/FileInput/FileInput';
 import { Haiku } from '@/components/Haiku/Haiku';
 import { HotdogProgress } from '@/components/HotdogProgress';
 import { logout } from '@/services/user';
+import { News } from '@/components/News/News';
 
 type UserLandingProps = {
   user: User;
@@ -15,20 +16,21 @@ type UserLandingProps = {
 export const UserLanding = (props: UserLandingProps) => {
   return (
     <Card>
-      <div className="flex gap-1 flex-col text-2xl text-center">🌭 🌭 🌭 </div>
       {/* <Link href="add-hotdog" className="flex">
         <Button variant="primary" className="flex-1">
           Zjadłem hotdoga
         </Button>
       </Link> */}
 
-      <HotdogProgress />
-
       <Link href="about" className="flex">
         <Button variant="primary" className="flex-1">
           🌭101 hot dogów! - 17.08.2024🌭
         </Button>
       </Link>
+
+      <News />
+
+      {/* <HotdogProgress /> */}
 
       <Button variant="ghost" onClick={logout}>
         Wyloguj

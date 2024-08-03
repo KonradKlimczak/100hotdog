@@ -2,13 +2,13 @@
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
-import { getHaikus, HaikuPost, likeHaiku } from '@/backend/haiku';
+import { dislikeHaiku, getHaikus, HaikuPost, likeHaiku } from '@/backend/haiku';
 import { Card } from '@/components/Card';
+import { DislikeButton } from '@/components/Interactions/Dislike';
+import { LikeButton } from '@/components/Interactions/Like';
+import { formatDateToHHMMDDMMYYYY } from '@/helpers/date';
 
 import { amaticSC } from '../ui/fonts';
-import { formatDateToHHMMDDMMYYYY } from '@/helpers/date';
-import { LikeButton } from '@/components/Interactions/Like';
-import { DislikeButton } from '@/components/Interactions/Dislike';
 
 export default function HaikuList() {
   const [haikus, setHaikues] = useState<HaikuPost[]>([]);
@@ -57,7 +57,7 @@ export default function HaikuList() {
               <DislikeButton
                 dislikes={dislikes ?? 0}
                 onClick={() => {
-                  likeHaiku(id, (dislikes ?? 0) + 1);
+                  dislikeHaiku(id, (dislikes ?? 0) + 1);
                   setHaikues((prev) =>
                     prev.map((h) => {
                       if (h.id === id) {
