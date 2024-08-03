@@ -98,7 +98,7 @@ export const News = () => (
               🌭 1000 zł - możesz wymyślić konkurs na następną edycje imprezy! (dla pierwszych 3 osób)
             </ListItem>
             <ListItem>
-              🌭 Najwyższa wpłata - możesz pomalować twarz Konradowi na imprezie i będzie tak ja prowadził (Dla jednego
+              🌭 Najwyższa wpłata - możesz pomalować twarz Konradowi na imprezie i będzie tak ją prowadził (Dla jednego
               darczyńcy)
             </ListItem>
           </List>
