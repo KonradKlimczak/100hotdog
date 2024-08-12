@@ -1,6 +1,10 @@
-export type PostEntry = {
+export type PostItem = {
   id: string;
-  userId: string;
+  authorId: string;
+  author: string;
+  lastModified: Date;
   content: string;
-  imageUrl: string;
+  imageUrl?: string;
+  miams: number;
+  kaszanas: number;
 };

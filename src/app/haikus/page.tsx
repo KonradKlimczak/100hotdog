@@ -12,7 +12,6 @@ import { amaticSC } from '../ui/fonts';
 
 export default function HaikuList() {
   const [haikus, setHaikues] = useState<HaikuPost[]>([]);
-  console.log('haikus', haikus);
 
   useEffect(() => {
     getHaikus().then(setHaikues);
