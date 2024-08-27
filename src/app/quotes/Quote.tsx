@@ -48,8 +48,8 @@ export const Quote = (props: QuoteProps) => {
       <DialogTitle id="alert-dialog-title">Cytat</DialogTitle>
       <DialogContent>
         <DialogContentText>
-          <pre>{quote.content}</pre>
-          <p>- {quote.author}</p>
+          <p dangerouslySetInnerHTML={{ __html: quote.content }} className="flex flex-col gap-2"></p>
+          <p className="mt-2">- {quote.author}</p>
         </DialogContentText>
       </DialogContent>
       <DialogActions>

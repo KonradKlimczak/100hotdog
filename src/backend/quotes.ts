@@ -15,12 +15,15 @@ export type QuoteDocument = {
 export const addQuote = async () => {
   const coll = collection(db, 'quotes');
   const result = await addDoc(coll, {
-    author: 'MG',
+    author: 'Łukasz',
     content: `
-Czy 2916 jest ready na qa? jak tak to wrzucimy?
-To nie jest moja wiadomość dla świata jakby co 😜
-Ah jestes AFK
-to luz
+<p>A życie jego - trud trudów,</p>
+
+<p>A tytuł jego - lud ludów,</p>
+
+<p>Z matki obcej, krew jego dawne bohatery,</p>
+
+<p>A imię jego czterdzieści i cztery.</p>
     `,
     likes: 0,
     dislikes: 0,

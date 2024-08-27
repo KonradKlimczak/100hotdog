@@ -9,6 +9,7 @@ import { useUser } from '@/services/user';
 
 import { GuestLanding } from './GuestLanding';
 import { UserLanding } from './UserLanding';
+import Quotes from './quotes/Quotes';
 
 const darkTheme = createTheme({
   palette: {
@@ -21,6 +22,7 @@ export default function Home() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
+      <Quotes />
       <main className="p-4">
         <CookiesDialog />
         {loading && <Loader>Sprawdzamy czy jestes zalogowany</Loader>}
