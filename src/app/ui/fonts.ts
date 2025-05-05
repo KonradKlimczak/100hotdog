@@ -1,4 +1,4 @@
-import { Merienda, Press_Start_2P } from 'next/font/google';
+import { Chakra_Petch,Merienda } from 'next/font/google';
 
-export const pressStart2P = Press_Start_2P({ weight: '400', subsets: ['latin-ext'] });
+export const pressStart2P = Chakra_Petch({ weight: '400', subsets: ['latin-ext'] });
 export const amaticSC = Merienda({ weight: '400', subsets: ['latin-ext'] });

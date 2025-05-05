@@ -6,10 +6,10 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 import { createUserProfile } from '@/backend/profile';
+import { throwHogfetti } from '@/helpers/hotfetti';
 import { useUser } from '@/services/user';
 
 import { Button } from '../Button';
-import { throwHogfetti } from '@/helpers/hotfetti';
 
 export const Navbar = () => {
   const { user, profile } = useUser();
@@ -55,6 +55,11 @@ export const Navbar = () => {
             <Link href="/about" className="flex">
               <Button variant="primary" onClick={() => setIsOpen(false)} className="flex-1">
                 101 hotdogów
+              </Button>
+            </Link>
+            <Link href="/archives/101hotdogow" className="flex">
+              <Button variant="primary" onClick={() => setIsOpen(false)} className="flex-1">
+                Archiwum
               </Button>
             </Link>
             <Link href="/profile" className="flex">

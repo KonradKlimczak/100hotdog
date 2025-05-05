@@ -5,12 +5,18 @@ import { getQoutes, QuoteDocument } from '@/backend/quotes';
 
 import { Quote } from './Quote';
 
-export default function Quotes() {
+export const QuotesList = () => {
   const [quotes, setQuotes] = useState<QuoteDocument[]>([]);
 
   useEffect(() => {
     getQoutes().then(setQuotes);
   }, []);
 
-  return quotes.map((quote) => <Quote key={quote.id} quote={quote} />);
-}
+  return (
+    <ul className="max-w-3xl mx-auto p-4 space-y-4">
+      {quotes.map((quote) => (
+        <Quote key={quote.id} quote={quote} />
+      ))}
+    </ul>
+  );
+};

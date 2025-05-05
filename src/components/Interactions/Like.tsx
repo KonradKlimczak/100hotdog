@@ -13,7 +13,7 @@ export const LikeButton = (props: LikeButtonProps) => {
   const { likes, onClick } = props;
 
   const handleClick = () => {
-    if (likes === 100) {
+    if (likes === 101) {
       throwHogfetti();
     }
     onClick();

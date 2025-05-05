@@ -3,11 +3,9 @@ import Link from 'next/link';
 
 import { Button } from '@/components/Button';
 import { Card } from '@/components/Card';
-import { FileInput } from '@/components/FileInput/FileInput';
 import { Haiku } from '@/components/Haiku/Haiku';
-import { HotdogProgress } from '@/components/HotdogProgress';
-import { logout } from '@/services/user';
 import { News } from '@/components/News/News';
+import { logout } from '@/services/user';
 
 type UserLandingProps = {
   user: User;
@@ -24,7 +22,7 @@ export const UserLanding = (props: UserLandingProps) => {
 
       <Link href="about" className="flex">
         <Button variant="primary" className="flex-1">
-          🌭101 hot dogów! - 17.08.2024🌭
+          🌭102 hot dogi! - ??.08.2025🌭
         </Button>
       </Link>
 

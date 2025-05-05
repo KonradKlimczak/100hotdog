@@ -7,19 +7,8 @@ import ListItem from '@mui/material/ListItem';
 import { ReactNode } from 'react';
 import Marquee from 'react-fast-marquee';
 
-const NEWS_ITEMS = [
-  {
-    id: '1',
-    date: '',
-    title: 'Start zbiórki',
-    content: `
-
-    Hej, hotdogowi zapaleńcy! Z radością ogłaszamy, że nasza długo oczekiwana zbiórka na PAH właśnie wystartowała! W tym roku podczas naszej imprezy 101 HOT DOGÓW zbieramy środki na pomoc natychmiastową dla ofiar wojen i katastrof naturalnych. Wyobraźcie sobie – 101 hot dogów i wsparcie dla potrzebujących w jednym! To jest coś, co nie tylko syci brzuchy, ale i serca.
-    
-    Nie czekajcie, dołączcie do naszej zbiórki już teraz na 101hotdogow.pl! Pamiętajcie, każda złotówka się liczy – a my obiecujemy, że podczas imprezy hot dogi będą tak pyszne, że warto będzie czekać. Pomagajmy razem!
-    `,
-  },
-];
+import { Article } from './Article';
+import { article102HotDogiTeaser } from './articles';
 
 const NewsTitle = (props: { children: string }) => <div className="text-white text-center">{props.children}</div>;
 const NewsDate = (props: { children: string }) => <div className="text-[10px] text-right">{props.children}</div>;
@@ -30,8 +19,11 @@ const NewsContent = (props: { children: ReactNode }) => (
 export const News = () => (
   <div className="py-4">
     <Marquee className="text-2xl font-bold text-gray-800 dark:text-white">
-      🌭 🌭 🌭 Z Ostatniej Chwili! 🌭 🌭 🌭&nbsp;
+      🌭 🌭 🌭 DUPA 🌭 🌭 🌭 DUPA 🌭 🌭 🌭 DUPA 🌭 🌭 🌭 DUPA 🌭 🌭 🌭 DUPA 🌭 🌭 🌭 DUPA
     </Marquee>
+    <Article
+      article={article102HotDogiTeaser}
+    />
     <div className="py-2">
       <div>
         <NewsTitle>Progi!</NewsTitle>
@@ -121,7 +113,9 @@ export const News = () => (
               🌭 6000 zł - na 102hotdogów powstanie specjalna hotdogowa gierka, w którą będziecie mogli grać na swoich
               telefonach!{' '}
             </ListItem>
-            <ListItem>🌭 8000 zł - na imprezie gramy w znaną grę dla całej rodziny: &quot;Na ilu nogach stoisz?&quot;</ListItem>
+            <ListItem>
+              🌭 8000 zł - na imprezie gramy w znaną grę dla całej rodziny: &quot;Na ilu nogach stoisz?&quot;
+            </ListItem>
             <ListItem>🌭 10 000 zł - Konrad goli się na łyso przed imprezą! </ListItem>
           </List>
         </p>
