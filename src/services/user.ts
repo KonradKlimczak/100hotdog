@@ -7,10 +7,9 @@ import {
   signOut,
   User,
 } from 'firebase/auth';
-import { redirect } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-import { getUserProfile, createUserProfile, UserProfile } from '@/backend/profile';
+import { createUserProfile, getUserProfile, UserProfile } from '@/backend/profile';
 import { auth } from '@/services/firebase';
 
 const google = new GoogleAuthProvider();

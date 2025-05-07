@@ -4,7 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import CookiesDialog from '@/components/CookiesDialog/CookiesDialog';
-import { Loader } from '@/components/Loader';
+import { SnailLoader } from '@/components/Loader/SnailLoader';
 import { useUser } from '@/services/user';
 
 import { GuestLanding } from './GuestLanding';
@@ -23,7 +23,7 @@ export default function Home() {
       <CssBaseline />
       <main className="p-4">
         <CookiesDialog />
-        {loading && <Loader>Sprawdzamy czy jestes zalogowany</Loader>}
+        {loading && <SnailLoader />}
         {!loading && !user && <GuestLanding />}
         {!loading && user && <UserLanding user={user} />}
       </main>

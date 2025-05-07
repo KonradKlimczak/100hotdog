@@ -1,13 +1,14 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
 import { updateUserProfile } from '@/backend/profile';
+import { Button } from '@/components/Button';
 import { Card } from '@/components/Card';
 import { LabeledInput } from '@/components/Input/LabeledInput';
-import { Loader } from '@/components/Loader';
+import { SnailLoader } from '@/components/Loader/SnailLoader';
 import { useUser } from '@/services/user';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { Button } from '@/components/Button';
 
 export default function Profile() {
   const [username, setUsername] = useState('');
@@ -27,7 +28,7 @@ export default function Profile() {
   };
 
   if (loading) {
-    return <Loader>Ładowanie użytkownia</Loader>;
+    return <SnailLoader />;
   }
 
   if (!profile) {
