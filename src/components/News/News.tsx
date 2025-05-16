@@ -8,7 +8,7 @@ import { ReactNode } from 'react';
 import Marquee from 'react-fast-marquee';
 
 import { Article } from './Article';
-import { article102HotDogiTeaser } from './articles';
+import { article102HotDogiTeaser, articleNowaDomena } from './articles';
 
 const NewsTitle = (props: { children: string }) => <div className="text-white text-center">{props.children}</div>;
 const NewsDate = (props: { children: string }) => <div className="text-[10px] text-right">{props.children}</div>;
@@ -18,9 +18,7 @@ const NewsContent = (props: { children: ReactNode }) => (
 
 export const News = () => (
   <div className="py-4">
-    <Marquee className="text-2xl font-bold text-gray-800 dark:text-white">
-      🌭 🌭 🌭 DUPA 🌭 🌭 🌭 DUPA 🌭 🌭 🌭 DUPA 🌭 🌭 🌭 DUPA 🌭 🌭 🌭 DUPA 🌭 🌭 🌭 DUPA
-    </Marquee>
+    <Article article={articleNowaDomena} />
     <Article
       article={article102HotDogiTeaser}
     />

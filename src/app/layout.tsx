@@ -7,7 +7,7 @@ import { Navbar } from '@/components/Navbar/Navbar';
 import { VisitCounter } from '@/components/VisitCounter';
 
 export const metadata: Metadata = {
-  title: '101 Hot dogów',
+  title: '102 Hot dogi',
   description: 'Co roku hot dog więcej',
 };
 

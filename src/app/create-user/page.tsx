@@ -12,11 +12,11 @@ export default function CreateUser() {
         <div className="flex gap-1 flex-col">
           <Link href="/">
             <Marquee className="text-2xl font-bold text-gray-800 dark:text-white">
-              🌭 🌭 🌭 sto jeden marzeń 🌭 🌭 🌭&nbsp;
+              🌭 🌭 🌭 sto dwa marzenia 🌭 🌭 🌭&nbsp;
             </Marquee>
           </Link>
 
-          <p className="text-sm">sto jeden przygód, sto jeden pragnień, sto jeden wspomnień do stworzenia</p>
+          <p className="text-sm">sto dwa</p>
         </div>
         <CreateUserForm />
         <Haiku />

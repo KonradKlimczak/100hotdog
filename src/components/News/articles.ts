@@ -1,4 +1,35 @@
-import { ArticleData } from "./types";
+import { ArticleData } from './types';
+
+export const articleNowaDomena: ArticleData = {
+  title: 'Nowa domena, ten sam głód!',
+  createdDate: '2025-05-07',
+  sections: [
+    {
+      type: 'heading',
+      level: 1,
+      text: 'Nowa domena, ten sam głód!',
+    },
+    {
+      type: 'paragraph',
+      content:
+        'Hot dogów przybyło, więc i nasz adres musiał to odczuć! Od teraz znajdziecie nas pod nowym, soczyście pysznym adresem: 102hotdogi.pl 🌭🔥',
+    },
+    {
+      type: 'paragraph',
+      content:
+        'To nie tylko cyferka więcej – to zapowiedź jeszcze większej imprezy, jeszcze bardziej chrupiących parówek i jeszcze mocniejszego wsparcia dla szczytnego celu.',
+    },
+    {
+      type: 'paragraph',
+      content:
+        'Zapiszcie nowy adres, podajcie dalej i zaglądajcie regularnie – bo lada moment zaczniemy odsłaniać, co czeka Was na tegorocznej edycji!',
+    },
+    {
+      type: 'paragraph',
+      content: '#102HOTDOGI nadchodzi. I jest głodny.',
+    },
+  ],
+};
 
 export const article102HotDogiTeaser: ArticleData = {
   title: 'Ona odeszła... ale wraca. I ma musztardę.',
