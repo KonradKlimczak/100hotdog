@@ -1,3 +1,4 @@
+// src/components/FileInput.tsx
 import imageCompression from "browser-image-compression";
 import React, { useRef, useState } from "react";
 
@@ -37,7 +38,7 @@ const ImageInput: React.FC<ImageInputProps> = ({ onImageReady }) => {
   };
 
   return (
-    <div className="max-w-sm mx-auto p-4 bg-yellow-100 border-2 border-black font-mono text-black">
+    <div className="w-full mt-4">
       <input
         ref={inputRef}
         type="file"
@@ -45,27 +46,30 @@ const ImageInput: React.FC<ImageInputProps> = ({ onImageReady }) => {
         onChange={handleFileChange}
         className="hidden"
       />
+
       <button
+        type="button"
         onClick={() => inputRef.current?.click()}
-        className="w-full bg-green-300 border border-black px-3 py-2 text-lg hover:bg-green-400 transition"
+        className="w-full bg-black bg-opacity-50 border-2 border-green-400 text-green-200 font-semibold py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-200 hover:border-green-200 transition"
       >
-        SELECT FILE 🌭
+        Wybierz zdjęcie swojej parówki 🌭
       </button>
 
       {preview && (
-        <div className="mt-4 border-2 border-black bg-white p-1" style={{ imageRendering: 'pixelated' }}>
-          <img src={preview} alt="preview" className="w-full" />
+        <div className="mt-4 border-2 border-green-400 bg-black bg-opacity-50 rounded-lg p-2">
+          <img src={preview} alt="preview" className="w-full rounded-lg" />
           <button
+            type="button"
             onClick={clearImage}
-            className="mt-2 w-full bg-red-400 border border-black px-2 py-1 text-sm hover:bg-red-500 transition"
+            className="mt-2 w-full bg-red-500 border border-black py-1 rounded-lg text-sm hover:bg-red-600 transition"
           >
-            CLEAR IMAGE
+            Wyczyść obrazek
           </button>
         </div>
       )}
 
       {fileName && (
-        <p className="mt-2 text-sm truncate text-center">{fileName}</p>
+        <p className="mt-2 text-center text-sm truncate text-green-200">{fileName}</p>
       )}
     </div>
   );
