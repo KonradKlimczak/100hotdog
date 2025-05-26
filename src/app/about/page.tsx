@@ -45,11 +45,11 @@ export default function About() {
         <CardContent>
           <Typography variant="body1" paragraph style={{ color: '#333333' }}>
             Dołącz do nas na wyjątkowej imprezie charytatywnej –{' '}
-            <Link href="https://101hotdogow.pl" target="_blank" rel="noopener noreferrer" style={{ color: '#D32F2F' }}>
-              101 HOT DOGÓW
+            <Link href="https://102hotdogi.pl" target="_blank" rel="noopener noreferrer" style={{ color: '#D32F2F' }}>
+              102 HOT DOGI
             </Link>
-            ! Razem zbierzemy trochę pieniędzy na szczytny cel i zjemy 101 hot dogów! Impreza odbędzie się 17 sierpnia
-            (jeśli będzie bardzo zła pogoda to 24 sierpnia - tydzień później) 2024 roku na działce letniskowej w
+            ! Razem zbierzemy trochę pieniędzy na szczytny cel i zjemy 102 hot dogi! Impreza odbędzie się 23 sierpnia
+            (jeśli będzie bardzo zła pogoda to 30 sierpnia – tydzień później) 2025 roku na działce letniskowej w
             Popowie, pod adresem Popów 1K, 99-235 Popów.
           </Typography>
 
@@ -80,12 +80,12 @@ export default function About() {
               Udział w imprezie jest darmowy, jednak gorąco zachęcamy wszystkich uczestników do wsparcia naszej zbiórki
               charytatywnej. Zapisy odbywają się poprzez naszą stronę internetową{' '}
               <Link
-                href="https://101hotdogow.pl"
+                href="https://102hotdogi.pl"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: '#D32F2F' }}
               >
-                101hotdogow.pl
+                102hotdogi.pl
               </Link>
               .
             </Typography>
@@ -99,7 +99,7 @@ export default function About() {
           </CollapsibleSection>
 
           <Typography variant="body1" style={{ marginTop: '16px', color: '#333333' }}>
-            Do zobaczenia 17 sierpnia w Popowie! Razem możemy zrobić coś wspaniałego!
+            Do zobaczenia 23 sierpnia w Popowie! Razem możemy zrobić coś wspaniałego!
           </Typography>
         </CardContent>
       </Card>

@@ -22,7 +22,7 @@ export const UserLanding = (props: UserLandingProps) => {
 
       <Link href="about" className="flex">
         <Button variant="primary" className="flex-1">
-          🌭102 hot dogi! - ??.08.2025🌭
+          🌭102 hot dogi! - 23.08.2025🌭
         </Button>
       </Link>
 

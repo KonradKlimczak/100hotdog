@@ -73,7 +73,39 @@ export const article102HotDogiTeaser: ArticleData = {
     {
       type: 'paragraph',
       content:
-        'Odwiedzajcie 101hotdogow.pl, bo wkrótce zaczniemy sypać konkretami jak prażoną cebulką. 102 HOT DOGI już się rozgrzewają. A my? My znów będziemy razem. I tym razem nie pozwolimy jej odejść.',
+        'Odwiedzajcie 102hotdogi.pl, bo wkrótce zaczniemy sypać konkretami jak prażoną cebulką. 102 HOT DOGI już się rozgrzewają. A my? My znów będziemy razem. I tym razem nie pozwolimy jej odejść.',
+    },
+  ],
+};
+
+export const articleDataUjawniona: ArticleData = {
+  title: 'Uwaga, parówki w kalendarzach!',
+  createdDate: '2025-05-10',
+  sections: [
+    {
+      type: 'heading',
+      level: 1,
+      text: 'Uwaga, parówki w kalendarzach!',
+    },
+    {
+      type: 'image',
+      src: '/articles/2025-05-26/save-the-date.png',
+      alt: 'Uwaga, parówki w kalendarzach!',
+    },
+    {
+      type: 'paragraph',
+      content:
+        'Znamy datę! Tegoroczna edycja 102 HOT DOGÓW odbędzie się **23 sierpnia 2025** (a jeśli pogoda postanowi pokrzyżować nam plany – mamy w zanadrzu plan B: **30 sierpnia**).',
+    },
+    {
+      type: 'paragraph',
+      content:
+        'Szykujcie brzuchy, dobry humor i miejsce na parówkę numer 102. Będzie chrupiąco, będzie śmiesznie, będzie jak zawsze... epicko!',
+    },
+    {
+      type: 'paragraph',
+      content:
+        'Więcej szczegółów już wkrótce. Na razie: wpisujcie datę w kalendarz ketchupem!',
     },
   ],
 };

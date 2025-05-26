@@ -54,7 +54,7 @@ export const Navbar = () => {
             </Link>
             <Link href="/about" className="flex">
               <Button variant="primary" onClick={() => setIsOpen(false)} className="flex-1">
-                101 hotdogów
+                102 hotdogów
               </Button>
             </Link>
             <Link href="/archives/101hotdogow" className="flex">
