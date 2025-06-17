@@ -55,7 +55,7 @@ const CommentsSection: React.FC<{ postId: string }> = ({ postId }) => {
 
   useEffect(() => {
     const commentsQuery = query(
-      collection(db, 'posts', postId, 'comments'),
+      collection(db, 'bestHotdogs', postId, 'comments'),
       orderBy('createdAt', 'asc')
     );
     const unsubscribe = onSnapshot(commentsQuery, (snapshot) => {
@@ -70,7 +70,7 @@ const CommentsSection: React.FC<{ postId: string }> = ({ postId }) => {
 
   const handleAdd = async () => {
     if (!newComment.trim() || !currentUser) return;
-    await addDoc(collection(db, 'posts', postId, 'comments'), {
+    await addDoc(collection(db, 'bestHotdogs', postId, 'comments'), {
       text: newComment.trim(),
       userId: currentUser.uid,
       userName: currentUser.displayName || undefined,
@@ -80,7 +80,7 @@ const CommentsSection: React.FC<{ postId: string }> = ({ postId }) => {
   };
 
   const handleDelete = async (commentId: string) => {
-    await deleteDoc(doc(db, 'posts', postId, 'comments', commentId));
+    await deleteDoc(doc(db, 'bestHotdogs', postId, 'comments', commentId));
   };
 
   return (
@@ -155,11 +155,11 @@ const PostItem: React.FC<{ post: Post }> = ({ post }) => (
 );
 
 const PostList: React.FC = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [bestHotdogs, setBestHotdogs] = useState<Post[]>([]);
 
   useEffect(() => {
     const q = query(
-      collection(db, 'posts'),
+      collection(db, 'bestHotdogs'),
       orderBy('createdAt', 'desc')
     );
 
@@ -189,7 +189,7 @@ const PostList: React.FC = () => {
         })
       );
 
-      setPosts(data);
+      setBestHotdogs(data);
     });
 
     return () => unsubscribe();
@@ -197,7 +197,7 @@ const PostList: React.FC = () => {
 
   return (
     <div className="max-w-3xl mx-auto mt-8 space-y-8">
-      {posts.map((post) => (
+      {bestHotdogs.map((post) => (
         <PostItem key={post.id} post={post} />
       ))}
     </div>

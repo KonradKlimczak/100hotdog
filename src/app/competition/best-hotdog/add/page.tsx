@@ -1,7 +1,8 @@
-// src/components/PostForm.tsx
+'use client';
 import { getAuth } from 'firebase/auth';
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { useRouter } from 'next/navigation';
 import React, { FormEvent, useState } from 'react';
 
 import { db, storage } from '@/services/firebase';
@@ -9,6 +10,7 @@ import { db, storage } from '@/services/firebase';
 import FileInput from './FileInput';
 
 const PostForm: React.FC = () => {
+  const router = useRouter();
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
   const [image, setImage] = useState<File | null>(null);
@@ -23,7 +25,7 @@ const PostForm: React.FC = () => {
   const savePost = async (imageUrl: string) => {
     const auth = getAuth();
     const user = auth.currentUser;
-    await addDoc(collection(db, 'posts'), {
+    await addDoc(collection(db, 'bestHotdogs'), {
       title,
       text,
       imageUrl,
@@ -45,7 +47,7 @@ const PostForm: React.FC = () => {
       setTitle('');
       setText('');
       setImage(null);
-      alert('🚀 Your hot-dog recipe has been posted!');
+      router.push('/competition/best-hotdog');
     } catch (err) {
       console.error(err);
       alert('😞 Something went wrong. Please try again.');
