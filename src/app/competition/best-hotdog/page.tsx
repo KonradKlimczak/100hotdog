@@ -16,6 +16,11 @@ const App: React.FC = () => {
           Dodaj Przepis
         </Button>
       </Link>
+      <Link href={`${pathname}/rules`} className="flex">
+        <Button variant="secondary" className="flex-1">
+          Zasady
+        </Button>
+      </Link>
       <PostList />
     </div>
   );

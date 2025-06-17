@@ -8,6 +8,8 @@ import React, { FormEvent, useState } from 'react';
 import { db, storage } from '@/services/firebase';
 
 import FileInput from './FileInput';
+import { Button } from '@/components/Button';
+import Link from 'next/link';
 
 const PostForm: React.FC = () => {
   const router = useRouter();
@@ -89,6 +91,12 @@ const PostForm: React.FC = () => {
       >
         {loading ? '🚀 Wysyłanie...' : '🚀 Zamieść przepis!'}
       </button>
+
+      <Link href="/competition/best-hotdog" className="flex">
+        <Button type="button" variant="secondary" className="mt-6 w-full">
+          Wróć
+        </Button>
+      </Link>
     </form>
   );
 };

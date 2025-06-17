@@ -57,6 +57,11 @@ export const Navbar = () => {
                 102 hotdogów
               </Button>
             </Link>
+            <Link href="/competition/best-hotdog" className="flex">
+              <Button variant="primary" onClick={() => setIsOpen(false)} className="flex-1">
+                Konkurs na Najlepszego Hotdoga
+              </Button>
+            </Link>
             <Link href="/archives/101hotdogow" className="flex">
               <Button variant="primary" onClick={() => setIsOpen(false)} className="flex-1">
                 Archiwum

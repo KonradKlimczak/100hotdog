@@ -12,6 +12,12 @@ export type ArticleSection =
       type: 'heading';
       level: 1 | 2 | 3;
       text: string;
+    }
+  | {
+      type: 'link';
+      href: string;
+      text: string;
+      target?: string;
     };
 
 export type ArticleData = {

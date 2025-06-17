@@ -104,8 +104,179 @@ export const articleDataUjawniona: ArticleData = {
     },
     {
       type: 'paragraph',
+      content: 'Więcej szczegółów już wkrótce. Na razie: wpisujcie datę w kalendarz ketchupem!',
+    },
+  ],
+};
+
+export const articleZbiorkaStart: ArticleData = {
+  title: 'Ruszamy ze zbiórką!',
+  createdDate: '2025-06-10',
+  sections: [
+    {
+      type: 'heading',
+      level: 1,
+      text: 'Ruszamy ze zbiórką!',
+    },
+    {
+      type: 'image',
+      src: '/articles/2025-06-17/zbiorka.png',
+      alt: 'Zbiórka!',
+    },
+    {
+      type: 'paragraph',
       content:
-        'Więcej szczegółów już wkrótce. Na razie: wpisujcie datę w kalendarz ketchupem!',
+        'Nasza impreza 102 Hot Dogi to nie tylko grill, śmiech i konkursy – to też realna pomoc dla tych, którzy jej potrzebują. Dlatego z ogromną radością ogłaszamy: ruszyła nasza zbiórka charytatywna!',
+    },
+    {
+      type: 'paragraph',
+      content:
+        'W tym roku wspieramy Fundację Polskie Centrum Pomocy Międzynarodowej (PCPM) – jedną z największych i najbardziej zaufanych organizacji humanitarnych w Polsce. Fundacja działa tam, gdzie pomoc jest najbardziej potrzebna – od Ukrainy, przez Bliski Wschód, aż po Afrykę. Pomagają ofiarom wojen, katastrof klimatycznych i ludziom, którzy zostali z niczym. Działają szybko, skutecznie i z sercem.',
+    },
+    {
+      type: 'paragraph',
+      content:
+        'Wesprzyj naszą wspólną misję i dorzuć się do zrzutki – nawet symboliczna kwota robi różnicę. Pokażmy, że hot dogi też potrafią zmieniać świat! 🌭❤️',
+    },
+    {
+      type: 'heading',
+      level: 2,
+      text: '📢 Link do zbiórki:',
+    },
+    {
+      type: 'link',
+      target: "_blank",
+      href: 'https://zrzutka.pl/43ft35/s/102-hot-dogi',
+      text: 'https://zrzutka.pl/43ft35/s/102-hot-dogi',
+    },
+    {
+      type: 'paragraph',
+      content: 'Dziękujemy wszystkim darczyńcom – jesteście najlepsi! 🔥',
+    },
+  ],
+};
+
+export const articleKonkursHotDog: ArticleData = {
+  title: 'Konkurs na najdziwniejszego hot-doga świata!',
+  createdDate: '2025-06-17',
+  sections: [
+    {
+      type: 'heading',
+      level: 1,
+      text: '🚀 102 Hot-Dogi zaczynają się już dziś, w Twojej kuchni!',
+    },
+    {
+      type: 'image',
+      src: '/articles/2025-06-17/alien-news.png',
+      alt: 'Kosmicznie pyszne!',
+    },
+    {
+      type: 'paragraph',
+      content: 'Weź udział w naszym konkursie online! Dodaj swój retro-futurystyczny przepis na hot-doga i wygrywaj!',
+    },
+    {
+      type: 'paragraph',
+      content: '🧪 Wymyśl hot-doga, którego pozazdrościłaby Ci Magda Gessler i pokaż, że masz wyobraźnię i styl.',
+    },
+    {
+      type: 'paragraph',
+      content:
+        '📸 Zrób autentyczne zdjęcie (bez AI!), opisz swój przepis i zgarnij nagrodę podczas imprezy „102 Hot Dogi” w Popowie!',
+    },
+    {
+      type: 'heading',
+      level: 2,
+      text: '📅 Harmonogram',
+    },
+    {
+      type: 'paragraph',
+      content:
+        '👉 Przepisy wrzucamy na 102hotdogi.pl do 15 lipca\n🗳 Głosowanie od 16 lipca do 19 sierpnia\n🏆 Finał i wręczenie nagrody – na scenie „102 Hot Dogi” w Popowie!',
+    },
+    {
+      type: 'paragraph',
+      content:
+        '💬 Przez cały czas możesz komentować i reagować na przepisy innych – bo każdy hot-dog zasługuje na uwagę!',
+    },
+    {
+      type: 'heading',
+      level: 2,
+      text: '🎁 Cel charytatywny',
+    },
+    {
+      type: 'paragraph',
+      content:
+        'I najważniejsze – to wszystko robimy dla dobra innych! Dorzuć się do naszej zbiórki charytatywnej na rzecz PCPM:',
+    },
+    {
+      type: 'link',
+      target: "_blank",
+      href: 'https://zrzutka.pl/43ft35/s/102-hot-dogi',
+      text: 'https://zrzutka.pl/43ft35/s/102-hot-dogi',
+    },
+    {
+      type: 'link',
+      href: '/competition/best-hotdog',
+      text: 'Link do konkursu',
+    },
+  ],
+};
+
+export const articleProgiNagrod102HotDogi: ArticleData = {
+  title: '🥳 Odsłaniamy progi nagród! Ile hot dogów jesteś wart?',
+  createdDate: '2025-06-20',
+  sections: [
+    {
+      type: 'heading',
+      level: 1,
+      text: '🎁 Nagrody, których nie znajdziesz w Lidlu!',
+    },
+    {
+      type: 'paragraph',
+      content:
+        'Czy Twoja dusza jest bardziej „Naklejka”, czy może „Duży Dyplom”? Teraz możesz to sprawdzić! Każda wpłata na naszą zrzutkę to nie tylko dobre uczynki i ciepło w sercu – to także SZALONE NAGRODY!',
+    },
+    {
+      type: 'paragraph',
+      content:
+        'Im więcej wpłacisz, tym bardziej zwariowane fanty Cię czekają. A najlepsze? Każdy wyższy próg zawiera wszystkie poprzednie – bo jak już szaleć, to na całego!',
+    },
+    {
+      type: 'image',
+      src: '/articles/2025-06-17/progi-102hotdogi.png',
+      alt: 'Lista progów nagród w kampanii 102 Hot Dogi',
+    },
+    {
+      type: 'heading',
+      level: 2,
+      text: '💸 Progi indywidualne 102 hotdogi:',
+    },
+    {
+      type: 'paragraph',
+      content:
+        '🌭 10 PLN – Naklejka (idealna na lodówkę, laptopa lub czoło)\n' +
+        '🌭 102 PLN – Pin 102 (nieoficjalny symbol dobrego smaku i stylu)\n' +
+        '🌭 200 PLN – Skarpety (ciepłe, stylowe, hotdogowe – TAK!)\n' +
+        '🌭 300 PLN – Postać w grze (wirtualna nieśmiertelność!)\n' +
+        '🌭 500 PLN – Verified user + szarfa (tak, SZARFA. Królewski prestiż.)\n' +
+        '🌭 1000 PLN – Dedykowany leżak (z Twoim imieniem i dumą)\n' +
+        '🌭 5000 PLN – Duży Dyplom (duży. jak Twoje serce i portfel)',
+    },
+    {
+      type: 'paragraph',
+      content:
+        'Przypominamy – wszystkie środki wspierają naszą zbiórkę na Fundację PCPM, która pomaga tam, gdzie świat płonie. A Ty w tym czasie siedzisz na leżaku z hot-dogiem. Deal życia? Zdecydowanie.',
+    },
+    {
+      type: 'paragraph',
+      content:
+        '🔥 Dorzuć się już teraz:',
+    },
+    {
+      type: 'link',
+      target: "_blank",
+      href: 'https://zrzutka.pl/43ft35/s/102-hot-dogi',
+      text: 'https://zrzutka.pl/43ft35/s/102-hot-dogi',
     },
   ],
 };

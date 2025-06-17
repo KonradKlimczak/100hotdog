@@ -18,6 +18,19 @@ const ArticleSectionComponent: React.FC<{ section: ArticleSection }> = ({ sectio
       };
 
       return <Tag className={headingStyles[`h${section.level}`] ?? ''}>{section.text}</Tag>;
+    case 'link':
+      return (
+        <p className="indent-8 mb-4">
+          <a
+            href={section.href}
+            target={section.target}
+            rel="noopener noreferrer"
+            className="text-blue-400 underline hover:text-blue-300"
+          >
+            {section.text}
+          </a>
+        </p>
+      );
     default:
       return null;
   }
