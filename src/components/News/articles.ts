@@ -223,60 +223,122 @@ export const articleKonkursHotDog: ArticleData = {
 };
 
 export const articleProgiNagrod102HotDogi: ArticleData = {
-  title: '🥳 Odsłaniamy progi nagród! Ile hot dogów jesteś wart?',
+  title: "Nagrody, których nie znajdziesz w Lidlu! Startują progi indywidualne na 102 HOT DOGI!",
   createdDate: '2025-06-20',
   sections: [
     {
-      type: 'heading',
-      level: 1,
-      text: '🎁 Nagrody, których nie znajdziesz w Lidlu!',
-    },
-    {
-      type: 'paragraph',
+      type: "paragraph",
       content:
-        'Czy Twoja dusza jest bardziej „Naklejka”, czy może „Duży Dyplom”? Teraz możesz to sprawdzić! Każda wpłata na naszą zrzutkę to nie tylko dobre uczynki i ciepło w sercu – to także SZALONE NAGRODY!',
+        "102 Hot Dogi to nie tylko okazja, aby najeść się i zrobić coś dobrego! To również szansa na wygraną! Tak jak w zeszłym roku prócz konkursów na miejscu zachęcamy do udziału w zbiórce przed imprezą i zbierania nagród!",
     },
     {
-      type: 'paragraph',
-      content:
-        'Im więcej wpłacisz, tym bardziej zwariowane fanty Cię czekają. A najlepsze? Każdy wyższy próg zawiera wszystkie poprzednie – bo jak już szaleć, to na całego!',
-    },
-    {
-      type: 'image',
-      src: '/articles/2025-06-17/progi-102hotdogi.png',
-      alt: 'Lista progów nagród w kampanii 102 Hot Dogi',
-    },
-    {
-      type: 'heading',
+      type: "heading",
       level: 2,
-      text: '💸 Progi indywidualne 102 hotdogi:',
+      text: "Jakie są zasady?",
     },
     {
-      type: 'paragraph',
+      type: "paragraph",
       content:
-        '🌭 10 PLN – Naklejka (idealna na lodówkę, laptopa lub czoło)\n' +
-        '🌭 102 PLN – Pin 102 (nieoficjalny symbol dobrego smaku i stylu)\n' +
-        '🌭 200 PLN – Skarpety (ciepłe, stylowe, hotdogowe – TAK!)\n' +
-        '🌭 300 PLN – Postać w grze (wirtualna nieśmiertelność!)\n' +
-        '🌭 500 PLN – Verified user + szarfa (tak, SZARFA. Królewski prestiż.)\n' +
-        '🌭 1000 PLN – Dedykowany leżak (z Twoim imieniem i dumą)\n' +
-        '🌭 5000 PLN – Duży Dyplom (duży. jak Twoje serce i portfel)',
+        "Od teraz do 20 sierpnia każdy z Was może wpłacać na zbiórkę dowolną kwotę. Jeżeli kwota, przekroczy określony próg, to otrzymujecie nagrodę! Należy się jednak spieszyć! Jeżeli więcej osób przekroczy określony próg, niż przewiduje limit nagród, obowiązuje zasada kto pierwszy, ten lepszy!",
     },
     {
-      type: 'paragraph',
+      type: "heading",
+      level: 2,
+      text: "Co możecie wygrać?",
+    },
+    {
+      type: "paragraph",
+      content: "Każdy z Was może otrzymać:",
+    },
+    {
+      type: "list",
+      ordered: false,
+      items: [
+        "🌭 10 PLN – Naklejka (idealna na lodówkę, laptopa lub czoło) - Limit 100 osób",
+        "🌭 102 PLN – Pin 102 HOT DOGI (nieoficjalny symbol dobrego smaku i stylu) - Limit 40 osób",
+        "🌭 200 PLN – Skarpety (ciepłe, stylowe i hotdogowe! Nieodłączny element Waszych stylizacji) - Limit 100 osób",
+        "🌭 300 PLN – Postać w grze, która obecnie powstaje (wirtualna nieśmiertelność!) - Limit 10 osób",
+        "🌭 500 PLN – Odznaka Verified User na stronie 102hotdogi.pl + szarfa, aby każdy wiedział o tym również offline (tak, SZARFA. Królewski prestiż) - Limit 10 osób",
+        "🌭 1000 PLN – Dedykowany leżak z Twoim imieniem (prestiż i duma, którą docenią nawet Twoi rodzice) - Limit 5 osób",
+        "🌭 5000 PLN – Duży Dyplom (duży. jak Twoje serce i portfel) - Limit 1 osoba",
+      ],
+    },
+    {
+      type: "paragraph",
       content:
-        'Przypominamy – wszystkie środki wspierają naszą zbiórkę na Fundację PCPM, która pomaga tam, gdzie świat płonie. A Ty w tym czasie siedzisz na leżaku z hot-dogiem. Deal życia? Zdecydowanie.',
+        "Przypominamy – wszystkie środki wspierają naszą zbiórkę na Fundację PCPM, która pomaga tam, gdzie świat płonie. A Ty w tym czasie siedzisz na leżaku z hot-dogiem. Deal życia? Zdecydowanie.",
     },
     {
-      type: 'paragraph',
-      content:
-        '🔥 Dorzuć się już teraz:',
+      type: "heading",
+      level: 2,
+      text: "🔥 Dorzuć się już teraz:",
     },
     {
-      type: 'link',
+      type: "link",
+      href: "https://zrzutka.pl/43ft35/s/102-hot-dogi",
+      text: "https://zrzutka.pl/43ft35/s/102-hot-dogi",
       target: "_blank",
-      href: 'https://zrzutka.pl/43ft35/s/102-hot-dogi',
-      text: 'https://zrzutka.pl/43ft35/s/102-hot-dogi',
+    },
+    {
+      type: "heading",
+      level: 2,
+      text: "FAQ",
+    },
+    {
+      type: "heading",
+      level: 3,
+      text: "Czy wpłaty się sumują?",
+    },
+    {
+      type: "paragraph",
+      content:
+        "Wszystkie podpisane przez Ciebie wpłaty się sumują i jeżeli łącznie pozwolą Ci przekroczyć dany próg, to zdobywasz nagrodę.",
+    },
+    {
+      type: "heading",
+      level: 3,
+      text: "Czy wpłaty po 20 sierpnia się wliczają?",
+    },
+    {
+      type: "paragraph",
+      content:
+        "Nie do progów z nagrodami, ale i tak zrobiłeś coś dobrego :*",
+    },
+    {
+      type: "heading",
+      level: 3,
+      text: "Kiedy otrzymamy nagrody?",
+    },
+    {
+      type: "paragraph",
+      content:
+        "Wręczenie nagród odbędzie się na 102 Hot Dogach lub zostaną one przekazane przy najbliższym spotkaniu jeżeli nie będzie Cię na imprezie. Możliwa jest również wysyłka za granicę 😀",
+    },
+    {
+      type: "paragraph",
+      flat: true,
+      content:
+        "UWAGA!\nNagrody takie jak:\nLeżak\nSzarfa\nPostać w grze\nDuży Dyplom\nSą personalizowane i wymagają więcej przygotowań. Jeżeli chcesz je otrzymać na imprezie, zachęcamy do osiągnięcia wymaganego progu 3 tygodnie przed naszym spotkaniem. Jeżeli ktoś osiągnie ten próg ostatniego dnia (20 sierpnia), to otrzyma nagrodę, ale prawdopodobnie z opóźnieniem.",
+    },
+    {
+      type: "heading",
+      level: 3,
+      text: "Przekroczyłem próg 200 zł jako 50 osoba, co teraz?",
+    },
+    {
+      type: "paragraph",
+      content:
+        "Otrzymasz naklejkę i skarpety, ale niestety piny dostanie pierwszych 40 osób, bo tyle ich mamy. Kto pierwszy ten lepszy. Tak to działa ze wszystkimi progami. Możesz wpłacić 5000 zł jako pierwszym, ale jeżeli na progu 102 zł byłeś jako sześćdziesiąta osoba, to dostaniesz Duży Dyplom, ale nie pina.",
+    },
+    {
+      type: "heading",
+      level: 3,
+      text: "Wiem, że nie będę na imprezie, mogę wziąć udział w osiąganiu progów?",
+    },
+    {
+      type: "paragraph",
+      content:
+        "TAK! Właśnie po to, wymyśliliśmy tę zabawę, aby każdy mógł być częścią tego wydarzenia!",
     },
   ],
 };

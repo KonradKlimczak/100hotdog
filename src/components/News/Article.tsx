@@ -5,7 +5,16 @@ import type { ArticleData, ArticleSection } from './types';
 const ArticleSectionComponent: React.FC<{ section: ArticleSection }> = ({ section }) => {
   switch (section.type) {
     case 'paragraph':
-      return <p className="indent-8 mb-4">{section.content}</p>;
+      return (
+        <p className={`${section.flat ? '' : 'indent-8'} mb-4`}>
+          {section.content.split('\n').map((line, index) => (
+            <React.Fragment key={index}>
+              {line}
+              {index < section.content.split('\n').length - 1 && <br />}
+            </React.Fragment>
+          ))}
+        </p>
+      );
     case 'image':
       return <img src={section.src} alt={section.alt ?? ''} className="rounded-xl shadow-md my-6 w-full" />;
     case 'heading':
@@ -30,6 +39,15 @@ const ArticleSectionComponent: React.FC<{ section: ArticleSection }> = ({ sectio
             {section.text}
           </a>
         </p>
+      );
+    case 'list':
+      const ListTag = section.ordered ? 'ol' : 'ul';
+      return (
+        <ListTag className={`list-inside ${section.ordered ? 'list-decimal' : 'list-disc'} mb-4 ml-6`}>
+          {section.items.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ListTag>
       );
     default:
       return null;

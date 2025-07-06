@@ -2,6 +2,7 @@ export type ArticleSection =
   | {
       type: 'paragraph';
       content: string;
+      flat?: boolean;
     }
   | {
       type: 'image';
@@ -18,6 +19,11 @@ export type ArticleSection =
       href: string;
       text: string;
       target?: string;
+    }
+  | {
+      type: 'list';
+      items: string[];
+      ordered?: boolean;
     };
 
 export type ArticleData = {
