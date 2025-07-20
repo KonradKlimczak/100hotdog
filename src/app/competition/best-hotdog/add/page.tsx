@@ -59,6 +59,12 @@ const PostForm: React.FC = () => {
   };
 
   return (
+    <div>
+      Sorry, koniec dodawania
+    </div>
+  )
+
+  return (
     <form
       onSubmit={handleSubmit}
       className="max-w-md mx-auto mt-8 p-8 border-2 border-pink-400 bg-gradient-to-br from-purple-800 via-pink-600 to-blue-500 rounded-2xl shadow-2xl text-green-200 font-semibold"

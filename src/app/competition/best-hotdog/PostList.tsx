@@ -1,4 +1,3 @@
-// src/components/PostList.tsx
 import React, { useEffect, useState } from 'react';
 import {
   collection,
@@ -11,6 +10,7 @@ import {
   getDoc,
   addDoc,
   deleteDoc,
+  setDoc,
 } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
@@ -45,7 +45,7 @@ const formatDate = (ts: Timestamp) => {
   });
 };
 
-// CommentsSection component extracted from PostItem for clarity
+// CommentsSection remains unchanged
 const CommentsSection: React.FC<{ postId: string }> = ({ postId }) => {
   const auth = getAuth();
   const currentUser = auth.currentUser;
@@ -130,29 +130,101 @@ const CommentsSection: React.FC<{ postId: string }> = ({ postId }) => {
   );
 };
 
-const PostItem: React.FC<{ post: Post }> = ({ post }) => (
-  <div className="mb-8 p-6 border-2 border-pink-400 bg-gradient-to-br from-purple-800 via-pink-600 to-blue-500 rounded-2xl shadow-2xl text-green-200 font-mono">
-    <h3 className="text-2xl font-extrabold tracking-widest uppercase mb-2">
-      {post.title}
-    </h3>
-    <p className="text-sm mb-4 opacity-80">
-      {formatDate(post.createdAt)}
-      {post.userName && ` • by ${post.userName}`}
-    </p>
-    <div className="border-2 border-green-400 bg-black bg-opacity-50 rounded-lg p-2 mb-4">
-      <img
-        src={post.imageUrl}
-        alt={post.title}
-        className="w-full rounded-lg"
-        style={{ imageRendering: 'pixelated' }}
-      />
-    </div>
-    <p className="mb-4 text-lg whitespace-pre-wrap">{post.text}</p>
+// PostItem with error handling for voting
+const PostItem: React.FC<{ post: Post }> = ({ post }) => {
+  const auth = getAuth();
+  const currentUser = auth.currentUser;
+  const [userVotePostId, setUserVotePostId] = useState<string | null>(null);
+  const [isVoting, setIsVoting] = useState(false);
+  const [voteError, setVoteError] = useState<string | null>(null);
 
-    {/* Extracted CommentsSection component */}
-    <CommentsSection postId={post.id} />
-  </div>
-);
+  useEffect(() => {
+    if (!currentUser) return;
+    const voteDocRef = doc(db, 'bestHotdogsVotes', currentUser.uid);
+    getDoc(voteDocRef)
+      .then((docSnap) => {
+        if (docSnap.exists()) {
+          const { postId } = docSnap.data();
+          setUserVotePostId(postId);
+        }
+      })
+      .catch((err) => {
+        console.error('Error fetching vote status:', err);
+        setVoteError('Nie udało się pobrać informacji o głosowaniu.');
+      });
+  }, [currentUser]);
+
+  const handleVote = async () => {
+    if (!currentUser) {
+      setVoteError('Musisz być zalogowany, aby głosować.');
+      return;
+    }
+
+    const voteDocRef = doc(db, 'bestHotdogsVotes', currentUser.uid);
+    setIsVoting(true);
+    setVoteError(null);
+
+    try {
+      if (userVotePostId === post.id) {
+        // Remove vote
+        await deleteDoc(voteDocRef);
+        setUserVotePostId(null);
+      } else {
+        // Update or add vote
+        await setDoc(voteDocRef, {
+          userId: currentUser.uid,
+          postId: post.id,
+        });
+        setUserVotePostId(post.id);
+      }
+    } catch (err: any) {
+      console.error('Voting error:', err);
+      setVoteError(`Błąd podczas głosowania: ${err.message}`);
+    } finally {
+      setIsVoting(false);
+    }
+  };
+
+  const isVotedForThisPost = userVotePostId === post.id;
+
+  return (
+    <div className="mb-8 p-6 border-2 border-pink-400 bg-gradient-to-br from-purple-800 via-pink-600 to-blue-500 rounded-2xl shadow-2xl text-green-200 font-mono">
+      <h3 className="text-2xl font-extrabold tracking-widest uppercase mb-2">
+        {post.title}
+      </h3>
+      <p className="text-sm mb-4 opacity-80">
+        {formatDate(post.createdAt)}
+        {post.userName && ` • by ${post.userName}`}
+      </p>
+      <div className="border-2 border-green-400 bg-black bg-opacity-50 rounded-lg p-2 mb-4">
+        <img
+          src={post.imageUrl}
+          alt={post.title}
+          className="w-full rounded-lg"
+          style={{ imageRendering: 'pixelated' }}
+        />
+      </div>
+      <p className="mb-4 text-lg whitespace-pre-wrap">{post.text}</p>
+
+      <button
+        onClick={handleVote}
+        disabled={isVoting}
+        className={`mb-2 px-4 py-2 font-bold rounded-lg border-2 transition ${
+          isVotedForThisPost
+            ? 'bg-green-300 text-black border-green-300'
+            : 'border-green-200 text-green-200 hover:bg-green-200 hover:text-black'
+        }`}
+      >
+        {isVotedForThisPost ? 'Usuń głos' : 'Zagłosuj'}
+      </button>
+      {voteError && (
+        <p className="text-sm text-red-400 mt-1">{voteError}</p>
+      )}
+
+      <CommentsSection postId={post.id} />
+    </div>
+  );
+};
 
 const PostList: React.FC = () => {
   const [bestHotdogs, setBestHotdogs] = useState<Post[]>([]);

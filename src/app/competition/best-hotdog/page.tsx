@@ -11,11 +11,11 @@ const App: React.FC = () => {
   const pathname = usePathname();
   return (
     <div>
-      <Link href={`${pathname}/add`} className="flex">
+      {/* <Link href={`${pathname}/add`} className="flex">
         <Button variant="primary" className="flex-1">
           Dodaj Przepis
         </Button>
-      </Link>
+      </Link> */}
       <Link href={`${pathname}/rules`} className="flex">
         <Button variant="secondary" className="flex-1">
           Zasady
